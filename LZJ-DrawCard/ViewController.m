@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.view.backgroundColor = UIColor.grayColor;
+    
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 200, 100, 50)];
     
     [button setTitleColor:UIColor.blueColor forState:(UIControlStateNormal)];
@@ -28,7 +31,11 @@
 
 - (void)showDrawCard{
     LZJDrawCardViewController *vc = [[LZJDrawCardViewController alloc]init];
-    vc.modalPresentationStyle = UIModalPresentationCurrentContext;
+    
+    vc.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;
+    [vc setContent:@"有六张神秘奖励卡牌，可任意点击一张卡牌抽取奖励，只有一次机会哦，祝您好运"];
     [self presentViewController:vc animated:NO completion:^{
         
     }];

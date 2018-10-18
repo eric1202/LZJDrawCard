@@ -15,7 +15,7 @@
 @end
 
 @interface LZJDrawCardViewController : UIViewController
-
+- (void)setContent:(NSString *)content;
 @end
 
 
