@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "LZJDrawCardController/LZJDrawCardViewController.h"
 @interface ViewController ()
 
 @end
@@ -16,7 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 200, 100, 50)];
+    
+    [button setTitleColor:UIColor.blueColor forState:(UIControlStateNormal)];
+    [button setTitle:@"选择" forState:(UIControlStateNormal)];
+    [button addTarget:self action:@selector(showDrawCard) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    [self.view addSubview:button];
+}
+
+- (void)showDrawCard{
+    LZJDrawCardViewController *vc = [[LZJDrawCardViewController alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self presentViewController:vc animated:NO completion:^{
+        
+    }];
 }
 
 

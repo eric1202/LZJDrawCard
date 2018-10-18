@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@interface LZJDrawCardView : UIView
+
+@property (nonatomic,copy) void (^tapBlock)(UIView *view);
+
+@end
 
 @interface LZJDrawCardViewController : UIViewController
 
 @end
 
-NS_ASSUME_NONNULL_END
+
